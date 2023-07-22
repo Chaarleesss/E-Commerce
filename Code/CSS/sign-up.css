@@ -19,8 +19,7 @@
   border-radius: 5px;
   background: #222;
   display: flex;
-  box-shadow: 15px;
-  box-shadow: 15px 5px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 30px 20px 30px 20px rgba(0, 0, 0, 0.3);
 }
 
 .content {
@@ -33,7 +32,7 @@
 }
 
 .content img {
-  width: 80%;
+  width: 90%;
 }
 
 .loginform {
@@ -44,7 +43,6 @@
 }
 
 .loginform h1 {
-  text-align: center;
   margin-top: 25px;
   font-size: 2, 5em;
   margin-bottom: 50px;
@@ -54,10 +52,17 @@
 .tbox {
   background: transparent;
   outline: none;
-  border-bottom: 1px solid #202020;
+  border-bottom: 1px solid #bdbdbd;
   width: 100%;
   height: 35px;
   margin: 30px 0;
+  margin-top: 8px;
+}
+
+p.head {
+  margin-left: 1%;
+  font-size: 12px;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
 
 .tbox input {
@@ -76,12 +81,40 @@
 .btn {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   margin-left: 50%;
-  width: 50%;
+  width: 45%;
   border: 0;
   border-radius: 30px;
   text-align: center;
   background: #7b76f1;
   color: #fff;
   padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.regis {
+  margin-top: 80px;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  text-align: center;
+}
+
+.regis p {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
   font-size: 15px;
+}
+
+.regis a {
+  color: #7b76f1;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .login {
+    flex-direction: column;
+    margin: 0 15px;
+  }
 }
