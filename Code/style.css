@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login {
+  width: 800px;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #222;
+  display: flex;
+  box-shadow: 15px;
+  box-shadow: 15px 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff9e1;
+}
+
+.content img {
+  width: 80%;
+}
+
+.loginform {
+  flex-basis: 50%;
+  background: #fff;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  padding: 25px;
+}
+
+.loginform h1 {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 2, 5em;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+.tbox {
+  background: transparent;
+  outline: none;
+  border-bottom: 1px solid #202020;
+  width: 100%;
+  height: 35px;
+  margin: 30px 0;
+}
+
+.tbox input {
+  background: transparent;
+  width: 90%;
+  outline: none;
+  border: 0;
+  padding-left: 5px;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+}
+
+::placeholder {
+  color: #777;
+}
+
+.btn {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  margin-left: 50%;
+  width: 50%;
+  border: 0;
+  border-radius: 30px;
+  text-align: center;
+  background: #7b76f1;
+  color: #fff;
+  padding: 12px;
+  font-size: 15px;
+}
