@@ -1,3 +1,37 @@
+<?php
+  @include 'config.php';
+
+
+  if(isset($_POST['submit'])){
+    $name = mysqli_real_escape_string($conn , $_POST['name']);
+    $pass = md5($_POST['password']);
+    $cpass = md5($_POST['cpassword']);
+    $user_type = $_POST['user_type'];
+
+
+    $select = "SELECT * FROM user_form WHERE name = '$name' && password = '$pass'";
+
+    $result = mysqli_query($conn, $select);
+
+
+    if(mysqli_num_rows($result) > 0){
+
+      $error[] = 'user already exist!';
+      
+    }else{
+      if($pass != $cpass){
+        $error[] = 'password not matched!';
+      }else{
+        $insert = "INSERT INTO user_form(name, password,user_type) VALUES('$name','$pass','$user_type')";
+        mysqli_query($conn, $insert);
+        header('location:Sign-In.php');
+      }
+    }
+  };
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +45,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="../CSS/sign-up.css" />
+    <link rel="stylesheet" href="sign-up.css" />
     <title>Sign-Up</title>
   </head>
   <body>
@@ -22,20 +56,31 @@
         </div>
         <div class="loginform">
           <h1>Buat Akun Mu !</h1>
-          <form action="" method="post">
-            <p class="head">Email or Username</p>
-            <div class="tbox"><i class="fa fa-user"></i><input type="text" name="name" placeholder="" /></div>
-            <p class="head">Password</p>
-            <div class="tbox"><i class="fa fa-lock"></i><input type="password" name="password" placeholder="" /></div>
-            <p class="head">Confirm Password</p>
-            <div class="tbox"><i class="fa fa-lock"></i><input type="password" name="cpassword" placeholder="" /></div>
-            <select name="" id="">
-              <option value="user">user</option>
-              <option value="admin">admin</option>
-            </select>
-            <!-- <button  class="btn">Sign-Up</button> -->
-            <input type="submit" name="submit" value="Sign Up" class="btn">
-          </form>
+            <form action="" method="post">
+            
+              <p class="head">Email or Username</p>
+              <div class="tbox"><i class="fa fa-user"></i><input type="text" name="name" placeholder="" /></div>
+              <p class="head">Password</p>
+              <div class="tbox"><i class="fa fa-lock"></i><input type="password" name="password" placeholder="" /></div>
+              <p class="head">Confirm Password</p>
+              <div class="tbox"><i class="fa fa-lock"></i><input type="password" name="cpassword" placeholder="" /></div>
+              <div class="">
+              <?php
+              if(isset($error)){
+                foreach($error as $error){
+                  echo '<span class="error-msg">'.$error.'</span>';
+                };
+              };
+              ?></div>
+                
+              <select name="user_type" id="">
+                <option value="user">user</option>
+                <option value="admin">admin</option>
+              </select>
+              <!-- <button  class="btn">Sign-Up</button> -->
+              
+              <input type="submit" name="submit" value="Sign Up" class="btn">
+            </form>
           <div class="regis">
             <p>Have a Account?<a href="Sign-In.php">Sign-In</a></p>
           </div>

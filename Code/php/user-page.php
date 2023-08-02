@@ -19,7 +19,7 @@
       <div class="container">
         <div class="nav-logo">
           <img src="Groceriess-box.png" width="50" style="margin-right: 20px" alt="" srcset="" />
-          <h2 class="Head">Groceriess</h2>
+          <h2 class="Head">user</h2>
         </div>
         <div class="search-bar">
           <i class="uil uil-search"></i>

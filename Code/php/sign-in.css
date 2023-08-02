@@ -117,3 +117,8 @@ p.head {
     margin: 0 15px;
   }
 }
+
+.login form .error-msg {
+  font-size: 15px;
+  color: red;
+}
