@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(252, 30%, 17%);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* nav .container h2 {
+} */
+
+nav {
+  width: 100%;
+  border-bottom: 1px solid #afafaf;
+  padding: 0.7rem 0;
+  top: 0;
+  z-index: 10;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.Head {
+  background: -webkit-linear-gradient(#505050, #00ffb5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-bar {
+  background-color: hsl(252, 30%, 95%);
+  border-radius: 2rem;
+  padding: 0.6rem 1rem;
+}
+
+.search-bar input[type="search"] {
+  background: transparent;
+  width: 30vw;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: hsl(252, 30%, 17%);
+}
+
+nav .button {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 2rem;
+  font-weight: 400;
+}
+
+.button .btn-1 a {
+  border: 2px solid #00a3ff;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #00a3ff;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+.button .btn-2 a {
+  border: 2px solid #505050;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #505050;
+  text-decoration: none;
+}
+
+.filter {
+  margin-left: 24%;
+  margin-top: 10px;
+  display: flex;
+  line-height: normal;
+}
+
+.image {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  border-radius: 20px;
+  box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  transition: transform 0.4s;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+.Sales {
+  margin-top: 2%;
+  margin-left: 25%;
+  font-weight: 600;
+  font-size: 30px;
+  color: #00a3ff;
+}
+
+.content {
+  margin-left: 25%;
+  margin-top: 2%;
+  display: flex;
+}
+
+.section {
+  margin-right: 100px;
+}
+
+.section .main img {
+  width: 150px;
+}
+
+.section .name {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.section .price {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.icon span {
+  color: #505050;
+}

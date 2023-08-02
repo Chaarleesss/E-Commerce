@@ -18,19 +18,26 @@
     <div class="container">
       <div class="login">
         <div class="content">
-          <img src="/image/Groceriess-box.png" alt="" />
+          <img src="../image/Groceriess-box.png" alt="" />
         </div>
         <div class="loginform">
           <h1>Buat Akun Mu !</h1>
-          <form action="">
+          <form action="" method="post">
             <p class="head">Email or Username</p>
-            <div class="tbox"><i class="fa fa-user"></i><input type="text" name="" placeholder="" /></div>
+            <div class="tbox"><i class="fa fa-user"></i><input type="text" name="name" placeholder="" /></div>
             <p class="head">Password</p>
-            <div class="tbox"><i class="fa fa-lock"></i><input type="password" name="" placeholder="" /></div>
-            <button class="btn">Sign-Up</button>
+            <div class="tbox"><i class="fa fa-lock"></i><input type="password" name="password" placeholder="" /></div>
+            <p class="head">Confirm Password</p>
+            <div class="tbox"><i class="fa fa-lock"></i><input type="password" name="cpassword" placeholder="" /></div>
+            <select name="" id="">
+              <option value="user">user</option>
+              <option value="admin">admin</option>
+            </select>
+            <!-- <button  class="btn">Sign-Up</button> -->
+            <input type="submit" name="submit" value="Sign Up" class="btn">
           </form>
           <div class="regis">
-            <p>Have a Account?<a href=""> Sign-In</a></p>
+            <p>Have a Account?<a href="Sign-In.php">Sign-In</a></p>
           </div>
         </div>
       </div>

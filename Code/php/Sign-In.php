@@ -18,22 +18,22 @@
     <div class="container">
       <div class="login">
         <div class="content">
-          <img src="/image/Groceriess-box.png" alt="" />
+          <img src="../image/Groceriess-box.png" alt="" />
         </div>
         <div class="loginform">
           <h1>
             Mulai Berbelanja <br />
             Dengan Groceriess!
           </h1>
-          <form action="">
+          <form action="" method="post">
             <p class="head">Email or Username</p>
             <div class="tbox"><i class="fa fa-user"></i><input type="text" name="" placeholder="" /></div>
             <p class="head">Password</p>
             <div class="tbox"><i class="fa fa-lock"></i><input type="password" name="" placeholder="" /></div>
-            <button class="btn">Sign-Up</button>
+            <button class="btn">Sign-In</button>
           </form>
           <div class="regis">
-            <p>Have a Account?<a href=""> Sign-In</a></p>
+            <p>Doesn't Have a Account?<a href="Sign-Up.php"> Sign-Up</a></p>
           </div>
         </div>
       </div>
