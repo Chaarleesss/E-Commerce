@@ -41,6 +41,16 @@ html {
   background: var(--black);
 }
 
+.message {
+  display: block;
+  background: var(--bg-color);
+  padding: 1.5rem 1rem;
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
 .container {
   max-width: 1200px;
   padding: 2rem;
