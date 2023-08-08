@@ -71,12 +71,12 @@ nav .button {
   font-weight: 400;
 }
 
-@media screen and (max-width: 767px) {
-  .nav .container .search-bar {
+@media screen and (max-width: 1080px) {
+  nav .container .search-bar {
     display: none;
     background-color: #00a3ff;
   }
-  .button {
+  nav .container .button {
     display: none;
   }
 }
@@ -189,6 +189,7 @@ nav .button {
 
 .button-cart {
   margin-top: 8px;
+  cursor: pointer;
 }
 
 .button-cart i {

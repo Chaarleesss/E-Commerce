@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+:root {
+  --green: #27ae60;
+  --black: #333;
+  --white: #fff;
+  --bg-color: #eee;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border: 0.1rem solid var(--black);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  background: var(--green);
+  color: var(--white);
+}
+
+.btn:hover {
+  background: var(--black);
+}
+
+.container {
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.admin-product-form-container form {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background: var(--bg-color);
+}
+
+.admin-product-form-container form h3 {
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.admin-product-form-container form .box {
+  width: 100%;
+  border-radius: 10px;
+  padding: 1.2rem;
+  font-size: 1.7rem;
+  margin: 1rem 0;
+  background: var(--white);
+  text-transform: none;
+}
+
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}

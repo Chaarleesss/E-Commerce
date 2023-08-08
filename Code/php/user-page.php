@@ -24,7 +24,7 @@ if(!isset( $_SESSION['user_name'] )){
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="user.css"/>
     <title>Document</title>
   </head>
   <body>
@@ -40,9 +40,8 @@ if(!isset( $_SESSION['user_name'] )){
         </div>
         <div class="button">
           <div class="btn-1">Welcome <span class="nama-user"><?php echo $_SESSION['user_name']  ?></span></div>
-          <div class="btn-2"><a href="Sign-Up.php">Log-Out</a></div>
+          <div class="btn-2"><a href="Sign-In.php">Log-Out</a></div>
         </div>
-      </div>
       </div>
     </nav>
     <div class="jumbotron">
