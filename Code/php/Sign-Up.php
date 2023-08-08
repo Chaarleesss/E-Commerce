@@ -27,6 +27,14 @@
         header('location:Sign-In.php');
       }
     }
+    // }elseif($name != "" && $pass !=""){
+
+    //   if($pass != $conn)
+
+
+
+
+    // }
   };
 ?>
 
