@@ -7,7 +7,9 @@ session_start();
 if(!isset( $_SESSION['user_name'] )){
     header('location:Sign-In.php');
 }
+$select = mysqli_query($conn, "SELECT * FROM products");
 ?>
+
 
 
 
@@ -25,7 +27,7 @@ if(!isset( $_SESSION['user_name'] )){
       rel="stylesheet"
     />
     <link rel="stylesheet" href="user.css"/>
-    <title>Document</title>
+    <title>User Page</title>
   </head>
   <body>
     <nav>
@@ -52,162 +54,44 @@ if(!isset( $_SESSION['user_name'] )){
     <div class="Sales">
       <p>Top Sales</p>
     </div>
+    
+    
     <div class="container-content">
+    <?php while($row = mysqli_fetch_assoc($select)){ ?>
       <div class="content">
         <div class="section">
-          <div class="main"><img src="../image/ip-x.jpg" alt="" /></div>
-          <p class="name">Iphone-13</p>
-          <p class="price">$600</p>
-          <div class="icon">
-            <i class="uil uil-check-circle" style="color: #ab43ff">
-              <span>North Jakarta</span>
-            </i>
-          </div>
-          <div class="icon-s">
-            <i class="uil uil-star" style="color: #ffc700">
-              <span>4,2</span>
-            </i>
-          </div>
-          <div class="button-cart">
-          <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
-          </div>
+            <div class="main"><img src="uploaded_img/<?php echo $row['image']; ?>" alt="" /></div>
+            <p class="name"><?php
+                              if(strlen($row['name']) > 15)
+                              {
+                                echo substr($row['name'], 0,12)."...";
+                              }
+                              else{
+                                echo $row['name'];
+                              } ?></p>
+            <p class="price">$<?php echo $row['price']; ?></p>
+            <div class="icon">
+              <i class="uil uil-check-circle" style="color: #ab43ff">
+                <span><?php echo $row['asal']; ?></span>
+              </i>
+            </div>
+            <div class="icon-s">
+              <i class="uil uil-star" style="color: #ffc700">
+                <span>4,2</span>
+              </i>
+            </div>
+            <div class="button-cart">
+            <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
+            </div>
         </div>
-        <div class="section">
-          <div class="main"><img src="../image/ip-13-fix.jpg" alt="" /></div>
-          <p class="name">Iphone-13</p>
-          <p class="price">$600</p>
-          <div class="icon">
-            <i class="uil uil-check-circle" style="color: #ab43ff">
-              <span>North Jakarta</span>
-            </i>
-          </div>
-          <div class="icon-s">
-            <i class="uil uil-star" style="color: #ffc700">
-              <span>4,2</span>
-            </i>
-          </div>
-          <div class="button-cart">
-          <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
-          </div>
-        </div>
-        <div class="section">
-          <div class="main"><img src="../image/ip-11-fix.jpg" alt="" /></div>
-          <p class="name">Iphone-13</p>
-          <p class="price">$600</p>
-          <div class="icon">
-            <i class="uil uil-check-circle" style="color: #ab43ff">
-              <span>North Jakarta</span>
-            </i>
-          </div>
-          <div class="icon-s">
-            <i class="uil uil-star" style="color: #ffc700">
-              <span>4,2</span>
-            </i>
-          </div>
-          <div class="button-cart">
-          <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
-          </div>
-        </div>
-        <div class="section">
-          <div class="main"><img src="../image/ip-14.jpg" alt="" /></div>
-          <p class="name">Iphone-13</p>
-          <p class="price">$600</p>
-          <div class="icon">
-            <i class="uil uil-check-circle" style="color: #ab43ff">
-              <span>North Jakarta</span>
-            </i>
-          </div>
-          <div class="icon-s">
-            <i class="uil uil-star" style="color: #ffc700">
-              <span>4,2</span>
-            </i>
-          </div>
-          <div class="button-cart">
-          <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
-          </div>
-        </div>
-      
-        
-        
       </div>
-      <div class="content">
-        <div class="section">
-          <div class="main"><img src="../image/ip-x.jpg" alt="" /></div>
-          <p class="name">Iphone-13</p>
-          <p class="price">$600</p>
-          <div class="icon">
-            <i class="uil uil-check-circle" style="color: #ab43ff">
-              <span>North Jakarta</span>
-            </i>
-          </div>
-          <div class="icon-s">
-            <i class="uil uil-star" style="color: #ffc700">
-              <span>4,2</span>
-            </i>
-          </div>
-          <div class="button-cart">
-          <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
-          </div>
-        </div>
-        <div class="section">
-          <div class="main"><img src="../image/ip-13-fix.jpg" alt="" /></div>
-          <p class="name">Iphone-13</p>
-          <p class="price">$600</p>
-          <div class="icon">
-            <i class="uil uil-check-circle" style="color: #ab43ff">
-              <span>North Jakarta</span>
-            </i>
-          </div>
-          <div class="icon-s">
-            <i class="uil uil-star" style="color: #ffc700">
-              <span>4,2</span>
-            </i>
-          </div>
-          <div class="button-cart">
-          <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
-          </div>
-        </div>
-        <div class="section">
-          <div class="main"><img src="../image/ip-11-fix.jpg" alt="" /></div>
-          <p class="name">Iphone-13</p>
-          <p class="price">$600</p>
-          <div class="icon">
-            <i class="uil uil-check-circle" style="color: #ab43ff">
-              <span>North Jakarta</span>
-            </i>
-          </div>
-          <div class="icon-s">
-            <i class="uil uil-star" style="color: #ffc700">
-              <span>4,2</span>
-            </i>
-          </div>
-          <div class="button-cart">
-          <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
-          </div>
-        </div>
-        <div class="section">
-          <div class="main"><img src="../image/ip-14.jpg" alt="" /></div>
-          <p class="name">Iphone-13</p>
-          <p class="price">$600</p>
-          <div class="icon">
-            <i class="uil uil-check-circle" style="color: #ab43ff">
-              <span>North Jakarta</span>
-            </i>
-          </div>
-          <div class="icon-s">
-            <i class="uil uil-star" style="color: #ffc700">
-              <span>4,2</span>
-            </i>
-          </div>
-          <div class="button-cart">
-          <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
-          </div>
-        </div>
-      
-        
-        
-      </div>
+      <?php }; ?>
     </div>
+    
+     
+      
+
+    
 
 
 
@@ -235,3 +119,6 @@ if(!isset( $_SESSION['user_name'] )){
   	 	</div>
   	 </div>
   </footer>
+
+  </body>
+</html>
