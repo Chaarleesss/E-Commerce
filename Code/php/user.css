@@ -52,12 +52,11 @@ nav .container {
   padding: 0.6rem 1rem;
 }
 
-.search-bar input[type="search"] {
+.search-bar input[type="text"] {
   background: transparent;
   width: 30vw;
   margin-left: 1rem;
   font-size: 0.9rem;
-  color: hsl(252, 30%, 17%);
 }
 
 nav .button {
@@ -76,7 +75,7 @@ nav .icon-cart a span {
   padding: 5px;
   background-color: red;
   color: white;
-  border-radius: 10px;
+  border-radius: 20%;
 }
 
 nav .icon-cart a {

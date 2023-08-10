@@ -13,7 +13,7 @@ if(isset($_POST['add_to_cart'])){
   $product_price = $_POST['product_price'];
   $product_asal = $_POST['product_asal'];
   $product_image = $_POST['product_image'];
-  $product_quantity = 0;
+  $product_quantity = 1;
 
   $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name'");
 
@@ -52,10 +52,13 @@ if(isset($_POST['add_to_cart'])){
           <img src="../image/Groceriess-box.png" width="50" style="margin-right: 20px" alt="" srcset="" />
           <h2 class="Head">Groceriess</h2>
         </div>
+        <form action="" method="post">
         <div class="search-bar">
           <i class="uil uil-search"></i>
-          <input type="search" placeholder="Find what u want" />
+          <input type="text" placeholder="Find what u want" size="80" />
         </div>
+        </form>
+        
         <div class="icon-cart">
           <?php 
             
@@ -63,7 +66,7 @@ if(isset($_POST['add_to_cart'])){
             $row_count = mysqli_num_rows($select_rows);
 
             ?>
-          <a href=""><i class="uil uil-shopping-cart"></i>
+          <a href="checkout.php"><i class="uil uil-shopping-cart"></i>
           <span><?php echo $row_count; ?></span></a>
           
         </div>

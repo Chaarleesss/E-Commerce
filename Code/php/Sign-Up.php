@@ -14,22 +14,40 @@
     $result = mysqli_query($conn, $select);
 
 
-    if(mysqli_num_rows($result) > 0){
+    // if(mysqli_num_rows($result) > 0){
 
-      $error[] = 'user already exist!';
+    //   $error[] = 'user already exist!';
       
-    }else{
-      if($pass != $cpass){
-        $error[] = 'password not matched!';
-      }else{
-        $insert = "INSERT INTO user_form(name, password,user_type) VALUES('$name','$pass','$user_type')";
-        mysqli_query($conn, $insert);
-        header('location:Sign-In.php');
-      }
-    }
-    // }elseif($name != "" && $pass !=""){
+    // }else{
+    //   if($pass != $cpass){
+    //     $error[] = 'password not matched!';
+    //   }else{
+    //     $insert = "INSERT INTO user_form(name, password,user_type) VALUES('$name','$pass','$user_type')";
+    //     mysqli_query($conn, $insert);
+    //     header('location:Sign-In.php');
+    //   }
+    // }
+    if(mysqli_num_rows($result) > 0 ){
+      $error[] = 'user already exist';
 
-    //   if($pass != $conn)
+  }
+
+  elseif($name != "" && $pass != ""){
+
+      if($pass != $cpass){
+          $error[] = 'password not match';
+      } 
+
+      else{
+      $insert = "INSERT INTO user_form (name, password, user_type) VALUES('$name', '$pass', '$user_type')";
+      mysqli_query($conn, $insert);
+      header('location:Sign-In.php');
+      }
+  } 
+
+  else{
+      $error[] = 'Enter username and password';
+  }
 
 
 
