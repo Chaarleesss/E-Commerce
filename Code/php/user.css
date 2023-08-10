@@ -26,6 +26,7 @@ nav {
   padding: 0.7rem 0;
   top: 0;
   z-index: 10;
+  text-decoration: none;
 }
 
 nav .container {
@@ -65,6 +66,23 @@ nav .button {
   gap: 2rem;
 }
 
+nav .icon-cart {
+  display: flex;
+}
+
+nav .icon-cart a span {
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}
+
+nav .icon-cart a {
+  text-decoration: none;
+}
+
 .btn {
   display: inline-block;
   padding: 0.6rem 2rem;
@@ -79,6 +97,15 @@ nav .button {
   nav .container .button {
     display: none;
   }
+}
+
+.message {
+  display: block;
+  background: var(--bg-color);
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 /* .button .btn-1 a {
@@ -152,9 +179,9 @@ nav .button {
   width: 50%;
 }
 
-.content {
+.form {
   width: 100px;
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   padding-right: 20%;
   max-inline-size: 1px;
@@ -181,16 +208,13 @@ nav .button {
   font-size: 20px;
 }
 
-.icon span {
-  color: #505050;
-}
-
 .button-cart {
   margin-top: 8px;
   cursor: pointer;
 }
 
-.button-cart i {
+.button-cart input {
+  cursor: pointer;
   font-weight: 500;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -201,6 +225,10 @@ nav .button {
   padding: 5px;
   font-size: 15px;
   font-weight: 600;
+}
+
+.button-cart input:hover {
+  background-color: #24262b;
 }
 
 .footer {

@@ -43,6 +43,7 @@ html {
 }
 
 .product-display-table .btn-1 {
+  display: flex;
   width: 100%;
   cursor: pointer;
   border-radius: 15px;

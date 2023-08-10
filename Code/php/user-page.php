@@ -7,7 +7,23 @@ session_start();
 if(!isset( $_SESSION['user_name'] )){
     header('location:Sign-In.php');
 }
-$select = mysqli_query($conn, "SELECT * FROM products");
+
+if(isset($_POST['add_to_cart'])){
+  $product_name = $_POST['product_name'];
+  $product_price = $_POST['product_price'];
+  $product_asal = $_POST['product_asal'];
+  $product_image = $_POST['product_image'];
+  $product_quantity = 0;
+
+  $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name'");
+
+  if(mysqli_num_rows($select_cart) > 0){
+    header('location:checkout.php');
+  }else{
+    $insert_product = mysqli_query($conn, "INSERT INTO `cart` (name, price, asal, image, quantity) VALUES('$product_name', '$product_price', '$product_asal', '$product_image', '$product_quantity')");
+  }
+}
+
 ?>
 
 
@@ -40,6 +56,17 @@ $select = mysqli_query($conn, "SELECT * FROM products");
           <i class="uil uil-search"></i>
           <input type="search" placeholder="Find what u want" />
         </div>
+        <div class="icon-cart">
+          <?php 
+            
+            $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+            $row_count = mysqli_num_rows($select_rows);
+
+            ?>
+          <a href=""><i class="uil uil-shopping-cart"></i>
+          <span><?php echo $row_count; ?></span></a>
+          
+        </div>
         <div class="button">
           <div class="btn-1">Welcome <span class="nama-user"><?php echo $_SESSION['user_name']  ?></span></div>
           <div class="btn-2"><a href="Sign-In.php">Log-Out</a></div>
@@ -52,12 +79,14 @@ $select = mysqli_query($conn, "SELECT * FROM products");
       </div>
     </div>
     <div class="Sales">
-      <p>Top Sales</p>
+      <p>Our Product</p>
     </div>
-    
-    
     <div class="container-content">
-    <?php while($row = mysqli_fetch_assoc($select)){ ?>
+    <?php $select = mysqli_query($conn, "SELECT * FROM products");
+    if(mysqli_num_rows($select) > 0){
+    while($row = mysqli_fetch_assoc($select)){ 
+      ?>
+    <form action="" method="post" class="form">
       <div class="content">
         <div class="section">
             <div class="main"><img src="uploaded_img/<?php echo $row['image']; ?>" alt="" /></div>
@@ -72,7 +101,14 @@ $select = mysqli_query($conn, "SELECT * FROM products");
             <p class="price">$<?php echo $row['price']; ?></p>
             <div class="icon">
               <i class="uil uil-check-circle" style="color: #ab43ff">
-                <span><?php echo $row['asal']; ?></span>
+                <span><?php
+                              if(strlen($row['asal']) > 15)
+                              {
+                                echo substr($row['asal'], 0,12)."...";
+                              }
+                              else{
+                                echo $row['asal'];
+                              } ?></span>
               </i>
             </div>
             <div class="icon-s">
@@ -80,29 +116,30 @@ $select = mysqli_query($conn, "SELECT * FROM products");
                 <span>4,2</span>
               </i>
             </div>
+            <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
+            <input type="hidden" name="product_price" value="<?php echo $row['price']; ?>">
+            <input type="hidden" name="product_asal" value="<?php echo $row['asal']; ?>">
+            <input type="hidden" name="product_image" value="<?php echo $row['image']; ?>">
             <div class="button-cart">
-            <i class="uil uil-shopping-cart"><span>Add To Cart</span></i>
+            
+              <input type="submit" value="add to cart" name="add_to_cart">
+            
             </div>
         </div>
       </div>
-      <?php }; ?>
+      </form>
+      <?php };
+      };
+       ?>
     </div>
     
-     
-      
-
-    
-
-
-
-
   <footer class="footer">
   	 <div class="container-footer">
   	 	<div class="row">
   	 		<div class="footer-col">
   	 			<h4>Our Team</h4>
   	 			<ul>
-  	 				<li><a href="#">Charles</a></li>
+  	 				<li><a href="https://www.instagram.com/chaaarleess_/">Charles</a></li>
   	 				<li><a href="#">Aldi</a></li>
   	 				<li><a href="#">Ryan</a></li>
   	 			</ul>
@@ -111,8 +148,8 @@ $select = mysqli_query($conn, "SELECT * FROM products");
   	 		<div class="footer-col">
   	 			<h4>follow us</h4>
   	 			<div class="social-links">
-  	 				<a href="#"><i class="uil uil-instagram"></i></a>
-  	 				<a href="#"><i class="uil uil-facebook-f"></i></a>
+  	 				<a href="https://www.instagram.com/chaaarleess_/"><i class="uil uil-instagram"></i></a>
+  	 				<a href="https://www.facebook.com/charles.andriansyah.94"><i class="uil uil-facebook-f"></i></a>
   	 				<a href="#"><i class="uil uil-twitter"></i></a>
   	 			</div>
   	 		</div>

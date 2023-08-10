@@ -82,7 +82,7 @@ if(isset($message)){
           <th>product image</th>
           <th>product name</th>
           <th>product asal</th>
-          <th>product price</th>
+          <th>product Price</th>
           <th>Action</th>
         </tr>
       </thead>
