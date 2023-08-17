@@ -186,6 +186,20 @@ td {
   transition: transform 0.4s, top 0.4s;
 }
 
+.cardpop {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
 .open-popup {
   visibility: visible;
   top: 50%;
@@ -217,4 +231,27 @@ td {
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#check {
+  margin-right: 6px;
+  pointer-events: none;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+#check:checked {
+  accent-color: #7d2ae8;
+}
+
+#check:checked ~ label {
+  accent-color: #7d2ae8;
+}
+
+.payment-cuy {
+  display: flex;
 }

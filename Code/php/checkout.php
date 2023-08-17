@@ -96,14 +96,28 @@ if(isset($_GET['delete_all'])){
             <td class="">$<?php echo $grand_total; ?></td>
             <td><a href="checkout.php?delete_all" onclick="return confirm('are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> delete all </a></td>
          </tr>
+         <tr class="paymentcuy">
+            <td>
+            <div class="cash"><a href="">Cash</a></div>
+            
+            <a>/</a>
+            <div class="card">
+            <a href="payment.php">Card</a>
+            </div>
+            
+            
+         </td></tr>
 
       </tbody>
 
    </table>
-
+         
    <div class="checkout-btn">
-      <button type="submit"  class="btn" onclick="openPopup()" <?= ($grand_total == 0)?'':'disabled'; ?>>Order</button>
+      <button type="submit"  class="btn" onclick="openPopup()" <?= ($grand_total == 0)?'':'disabled'; ?>">Order</button>
    </div>
+
+       
+
    <div class="popup" id="popup">
          <img src="../image/404-tick.png" alt="">
          <h2>thankyou</h2>
@@ -125,6 +139,7 @@ if(isset($_GET['delete_all'])){
          function closePopup(){
             popup.classList.remove("open-popup");
          }
+
 
 
 

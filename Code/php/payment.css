@@ -8,7 +8,6 @@
   outline: none;
   border: none;
   text-transform: capitalize;
-  transition: all 0.2s linear;
 }
 
 .container {
@@ -17,43 +16,42 @@
   align-items: center;
   padding: 25px;
   min-height: 100vh;
-  background: linear-gradient(90deg, #777777 60%, #464646 40.1%);
+  background: linear-gradient(90deg, #505050 60%, #00ffb5 40.1%);
 }
 
-.container form {
+.container .form {
   padding: 20px;
   width: 700px;
   background: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container form .row {
+.container .form .row {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
 
-.container form .row .col {
+.container .form .row .col {
   flex: 1 1 250px;
 }
 
-.container form .row .col .title {
+.container .form .row .col .title {
   font-size: 20px;
   color: #333;
   padding-bottom: 5px;
-  text-transform: uppercase;
 }
 
-.container form .row .col .inputBox {
+.container .form .row .col .inputBox {
   margin: 15px 0;
 }
 
-.container form .row .col .inputBox span {
+.container .form .row .col .inputBox span {
   margin-bottom: 10px;
   display: block;
 }
 
-.container form .row .col .inputBox input {
+.container .form .row .col .inputBox input {
   width: 100%;
   border: 1px solid #ccc;
   padding: 10px 15px;
@@ -61,26 +59,26 @@
   text-transform: none;
 }
 
-.container form .row .col .inputBox input:focus {
+.container .form .row .col .inputBox input:focus {
   border: 1px solid #000;
 }
 
-.container form .row .col .flex {
+.container .form .row .col .flex {
   display: flex;
   gap: 15px;
 }
 
-.container form .row .col .flex .inputBox {
+.container .form .row .col .flex .inputBox {
   margin-top: 5px;
 }
 
-.container form .row .col .inputBox img {
+.container .form .row .col .inputBox img {
   height: 34px;
   margin-top: 5px;
   filter: drop-shadow(0 0 1px #000);
 }
 
-.container form .submit-btn {
+.container .form .submit-btn {
   width: 100%;
   padding: 12px;
   font-size: 17px;
@@ -90,6 +88,59 @@
   cursor: pointer;
 }
 
-.container form .submit-btn:hover {
+.container .form .submit-btn:hover {
   background: #2ecc71;
+}
+
+.popup {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button {
+  width: 80%;
+  margin-top: 50px;
+  padding: 50px 0;
+  background: #6fd649;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pay {
+  border: 1px solid black;
+  text-align: center;
 }

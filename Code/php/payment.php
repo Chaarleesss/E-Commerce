@@ -4,24 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pay</title>
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="payment.css" />
   </head>
   <body>
     <div class="container">
-      <form action="">
+      <div class="form">
         <div class="row">
           <div class="col">
             <h3 class="title">billing address</h3>
 
             <div class="inputBox">
               <span>full name :</span>
-              <input type="text" placeholder="john deo" />
+              <input type="text" placeholder="Charles" />
             </div>
             <div class="inputBox">
               <span>email :</span>
-              <input type="email" placeholder="example@example.com" />
+              <input type="email" placeholder="charlesgantenk@gmail.com" />
             </div>
             <div class="inputBox">
               <span>address :</span>
@@ -29,13 +30,13 @@
             </div>
             <div class="inputBox">
               <span>city :</span>
-              <input type="text" placeholder="mumbai" />
+              <input type="text" placeholder="Jakarta" />
             </div>
 
             <div class="flex">
               <div class="inputBox">
                 <span>state :</span>
-                <input type="text" placeholder="india" />
+                <input type="text" placeholder="Indonesia" />
               </div>
               <div class="inputBox">
                 <span>zip code :</span>
@@ -53,7 +54,7 @@
             </div>
             <div class="inputBox">
               <span>name on card :</span>
-              <input type="text" placeholder="mr. john deo" />
+              <input type="text" placeholder="mr. Char" />
             </div>
             <div class="inputBox">
               <span>credit card number :</span>
@@ -72,37 +73,36 @@
               <div class="inputBox">
                 <span>CVV :</span>
                 <input type="text" placeholder="1234" />
-              </div>
-            </div>
+              </div>      
+            </div>  
           </div>
         </div>
-
-   <div class="popup" id="popup">
-         <img src="../image/404-tick.png" alt="">
-         <h2>thankyou</h2>
-         <p>Your Products has been ordered</p>
-
-         <button type="button" onclick="closePopup()" ><a href="checkout.php?delete_all"  onclick="closePopup()">OK</a></button>
+        <div class="pay"  onclick="openPopup()">
+          <button type="submit" class="btn">pay</button>
+        </div>
       </div>
+      
+      
+      <div class="popup" id="popup">
+        <img src="../image/404-tick.png" alt="" />
+        <h2>thankyou</h2>
+        <p>Your Products has been ordered</p>
 
-</section>
-
-</div>
-
-<script>
-   let popup = document.getElementById("popup");
-
-         function openPopup(){
-            popup.classList.add("open-popup");
-         }
-         function closePopup(){
-            popup.classList.remove("open-popup");
-         }
-
-
-
-</script>
+        <button type="button" onclick="closePopup()"><a href="checkout.php?delete_all" onclick="closePopup()">OK</a></button>
+      </div>
     </div>
-    
+
+    <script>
+      let popup = document.getElementById("popup");
+
+      function openPopup() {
+        popup.classList.add("open-popup");
+      }
+      function closePopup() {
+        popup.classList.remove("open-popup");
+      }
+    </script>
   </body>
 </html>
+
+
