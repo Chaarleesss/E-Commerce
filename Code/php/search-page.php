@@ -24,12 +24,7 @@ if(isset($_POST['add_to_cart'])){
 }
 
 
-if(isset($_GET['search']))
-  {
-      $filtervalues = $_GET['search'];
-      $query = "SELECT * FROM products WHERE CONCAT(name,price,asal,image) LIKE '%$filtervalues%' ";
-      $query_run = mysqli_query($con, $query);
-  }
+
 
 
 
@@ -62,13 +57,14 @@ if(isset($_GET['search']))
           <img src="../image/Groceriess-box.png" width="50" style="margin-right: 20px" alt="" srcset="" />
           <h2 class="Head">Groceriess</h2>
         </div>
+        <a href="user-page.php">back to beranda</a>
         <form action="" method="GET">
         <div class="search-bar">
           <i class="uil uil-search"></i>
-          <a href="search-page.php">
+         
           <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search'];}?>" placeholder="Find what u want" size="80" />
           <button type="submit" name="submit"></button>
-          </a>
+          
         </div>
         </form>
         
@@ -89,22 +85,31 @@ if(isset($_GET['search']))
         </div>
       </div>
     </nav>
-    <div class="jumbotron">
-      <div class="image">
-        <img src="../image/Iphone-Banner.png" alt="" />
-      </div>
-    </div>
-    <div class="Sales">
-      <p>Our Product</p>
-    </div>
+
+
+ 
+    
     <div class="container-content">
-    <?php $select = mysqli_query($conn, "SELECT * FROM products");
-    if(mysqli_num_rows($select) > 0){
-    while($row = mysqli_fetch_assoc($select)){ 
+        
+    <?php 
+     $conn = mysqli_connect("localhost","root","","user_db");
+        if(isset($_GET['search']))
+        {
+            $filtervalues = $_GET['search'];
+            $query = "SELECT * FROM products WHERE CONCAT(name,price,asal,image) LIKE '%$filtervalues%' ";
+            $query_run = mysqli_query($conn, $query);
+
+
+            if(mysqli_num_rows($query_run) > 0)
+                                        {
+                                            foreach($query_run as $row)
+                                            {
+        
       ?>
     <form action="" method="post" class="form">
       <div class="content">
         <div class="section">
+            
             <div class="main"><img src="uploaded_img/<?php echo $row['image']; ?>" alt="" /></div>
             <p class="name"><?php
                               if(strlen($row['name']) > 15)
@@ -144,34 +149,15 @@ if(isset($_GET['search']))
         </div>
       </div>
       </form>
-      <?php };
+      
+      <?php
+       };
       };
+        };
        ?>
     </div>
     
-  <footer class="footer">
-  	 <div class="container-footer">
-  	 	<div class="row">
-  	 		<div class="footer-col">
-  	 			<h4>Our Team</h4>
-  	 			<ul>
-  	 				<li><a href="https://www.instagram.com/chaaarleess_/">Charles</a></li>
-  	 				<li><a href="#">Aldi</a></li>
-  	 				<li><a href="#">Ryan</a></li>
-  	 			</ul>
-  	 		</div>
 
-  	 		<div class="footer-col">
-  	 			<h4>follow us</h4>
-  	 			<div class="social-links">
-  	 				<a href="https://www.instagram.com/chaaarleess_/"><i class="uil uil-instagram"></i></a>
-  	 				<a href="https://www.facebook.com/charles.andriansyah.94"><i class="uil uil-facebook-f"></i></a>
-  	 				<a href="#"><i class="uil uil-twitter"></i></a>
-  	 			</div>
-  	 		</div>
-  	 	</div>
-  	 </div>
-  </footer>
 
   </body>
 </html>
