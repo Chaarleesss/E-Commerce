@@ -57,7 +57,7 @@ if(isset($_POST['add_to_cart'])){
           <img src="../image/Groceriess-box.png" width="50" style="margin-right: 20px" alt="" srcset="" />
           <h2 class="Head">Groceriess</h2>
         </div>
-        <a href="user-page.php">back to beranda</a>
+        
         <form action="" method="GET">
         <div class="search-bar">
           <i class="uil uil-search"></i>
@@ -88,7 +88,9 @@ if(isset($_POST['add_to_cart'])){
 
 
  
-    
+    <div class="back">
+    <a href="user-page.php">back to beranda</a>
+    </div>
     <div class="container-content">
         
     <?php 

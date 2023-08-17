@@ -63,6 +63,7 @@ if(isset($message)){
 
   <div class="admin-product-form-container">
   <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+    <button ><i class="uil uil-arrow-left"></i><a href="Sign-In.php">Log-Out</a></button>
       <h3>Add New Product</h3>
       <input type="text" placeholder="Product Name" name="product_name" class="box">
       <input type="number" placeholder="Product Price" name="product_price" class="box">

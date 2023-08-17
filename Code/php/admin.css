@@ -38,6 +38,19 @@ html {
   text-align: center;
 }
 
+.btn-2 {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  background: -webkit-linear-gradient(#4f7f92, #199bce);
+  color: var(--white);
+  text-align: center;
+}
+
 .btn:hover {
   background: var(--black);
 }

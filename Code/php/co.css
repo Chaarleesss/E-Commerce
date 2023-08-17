@@ -26,7 +26,7 @@ html {
 
 .btn {
   display: block;
-  width: 100%;
+  width: 92%;
   cursor: pointer;
   border-radius: 15px;
   margin-top: 1rem;
@@ -39,6 +39,10 @@ html {
 
 .btn:hover {
   background: var(--black);
+}
+
+.checkout-btn .btn a {
+  color: var(--white);
 }
 
 .update-number {

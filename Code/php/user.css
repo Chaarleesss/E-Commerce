@@ -171,6 +171,18 @@ nav .icon-cart a {
   color: #00a3ff;
 }
 
+.back {
+  margin-top: 1%;
+  margin-left: 25%;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000000;
+}
+
+.back:hover {
+  color: #505050;
+}
+
 .container-content {
   display: flex;
   flex-wrap: wrap;
