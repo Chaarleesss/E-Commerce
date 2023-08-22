@@ -4,85 +4,69 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <script src="https://kit.fontawesome.com/e8fa2e31b4.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pay</title>
-
-    <!-- custom css file link  -->
     <link rel="stylesheet" href="payment.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="form">
-        <div class="row">
-          <div class="col">
-          <button ><i class="uil uil-arrow-left"></i><a href="checkout.php">Go-Back</a></button>
-            <h3 class="title">billing address</h3>
+    
 
-            <div class="inputBox">
-              <span>full name :</span>
-              <input type="text" placeholder="Charles" />
-            </div>
-            <div class="inputBox">
-              <span>email :</span>
-              <input type="email" placeholder="charlesgantenk@gmail.com" />
-            </div>
-            <div class="inputBox">
-              <span>address :</span>
-              <input type="text" placeholder="room - street - locality" />
-            </div>
-            <div class="inputBox">
-              <span>city :</span>
-              <input type="text" placeholder="Jakarta" />
-            </div>
-
-            <div class="flex">
-              <div class="inputBox">
-                <span>state :</span>
-                <input type="text" placeholder="Indonesia" />
-              </div>
-              <div class="inputBox">
-                <span>zip code :</span>
-                <input type="text" placeholder="123 456" />
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <h3 class="title">payment</h3>
-
-            <div class="inputBox">
-              <span>cards accepted :</span>
-              <img src="../image/card_img.png" alt="" />
-            </div>
-            <div class="inputBox">
-              <span>name on card :</span>
-              <input type="text" placeholder="mr. Char" />
-            </div>
-            <div class="inputBox">
-              <span>credit card number :</span>
-              <input type="number" placeholder="1111-2222-3333-4444" />
-            </div>
-            <div class="inputBox">
-              <span>exp month :</span>
-              <input type="text" placeholder="january" />
-            </div>
-
-            <div class="flex">
-              <div class="inputBox">
-                <span>exp year :</span>
-                <input type="number" placeholder="2022" />
-              </div>
-              <div class="inputBox">
-                <span>CVV :</span>
-                <input type="text" placeholder="1234" />
-              </div>      
-            </div>  
-          </div>
+     <div class="container">
+      <div class="left">
+        <p>Payment Methods</p>
+        <hr style="border: 1px solid #ccc; margin: 0 15px" />
+        <div class="methods">
+          <div onclick="doFun()" id="tColorA" style="color: #3749e9"><i class="fa-solid fa-credit-card" style="color: #3749e9"></i>Payment By Card</div>
+          <div onclick="doFunA()" id="tColorB"><i class="fa-solid fa-barcode"></i>Qris</div>
+          <div onclick="doFunB()" id="tColorC"><i class="fa-solid fa-wallet"></i>Cash Or Duel</div>
         </div>
-        <div class="pay"  onclick="openPopup()">
-          <button type="submit" class="btn">Pay With Card Now </button>
+        <hr style="border: 1px solid #ccc; margin: 0 15px" />
+      </div>
+      <div class="center">
+        <a href="https://www.shift4shop.com/credit-card-logos.html"><img src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" alt="Credit Card Logos" title="Credit Card Logos" width="250" height="auto" /></a>
+        <hr style="border: 1px solid #ccc; margin: 0 15px" />
+        <div class="card-details">
+          <form action="">
+            <p>Card Number</p>
+            <div class="c-number" id="c-number">
+              <input id="number" class="cc-number" placeholder="Card Number" maxlength="19" required />
+              <i class="fa-solid fa-credit-card" style="margin: 0"></i>
+            </div>
+
+            <div class="c-details">
+              <div>
+                <p>Expiry Date</p>
+                <input id="e-date" class="cc-exp" placeholder="MM/YY" required maxlength="5" required />
+              </div>
+              <div>
+                <p>CVV</p>
+                <div class="cvv-box" id="cvv-box">
+                  <input id="cvv" class="cc-cvv" placeholder="CVV" required maxlength="3" required />
+                  <i class="fa-solid fa-circle-question" title="3 digits onclick the back of the card" style="cursor: pointer"></i>
+                </div>
+              </div>
+            </div>
+            <div class="email">
+              <p>Email</p>
+              <input type="email" placeholder="Charles@gmail.com" id="email" required />
+            </div>
+            <button>Pay Now</button>
+          </form>
         </div>
       </div>
+      <div class="right">
+        <p>Order Information</p>
+        <hr style="border: 1px solid #ccc; margin: 0 15px" />
+
+        <div class="details">
+          <div style="font-weight: 700; padding: 3px 0">Order Desc</div>
+          <div style="padding: 3px 0">Test Payment</div>
+        </div>
+        <hr style="border: 1px solid #ccc; margin: 0 15px" />
+        <a href="https://www.shift4shop.com/credit-card-logos.html"><img src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" alt="Credit Card Logos" title="Credit Card Logos" width="250" height="auto" /></a>
+      </div>
+    </div>
       
       
       <div class="popup" id="popup">
