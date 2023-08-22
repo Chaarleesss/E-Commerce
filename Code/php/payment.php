@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pay</title>
 
@@ -14,6 +15,7 @@
       <div class="form">
         <div class="row">
           <div class="col">
+          <button ><i class="uil uil-arrow-left"></i><a href="checkout.php">Go-Back</a></button>
             <h3 class="title">billing address</h3>
 
             <div class="inputBox">
@@ -78,7 +80,7 @@
           </div>
         </div>
         <div class="pay"  onclick="openPopup()">
-          <button type="submit" class="btn">pay</button>
+          <button type="submit" class="btn">Pay With Card Now </button>
         </div>
       </div>
       
