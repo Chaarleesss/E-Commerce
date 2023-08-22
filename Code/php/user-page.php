@@ -89,11 +89,32 @@ if(isset($_GET['search']))
         </div>
       </div>
     </nav>
-    <div class="jumbotron">
-      <div class="image">
-        <img src="../image/Iphone-Banner.png" alt="" />
+    <section class="container">
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img
+            id="slide-1"
+            src="../image/converse-shoes.jpg"
+            alt="3D rendering of an imaginary orange planet in space"
+          />
+          <img
+            id="slide-2"
+            src="../image/Laptop(MSI).jpg"
+            alt="3D rendering of an imaginary green planet in space"
+          />
+          <img
+            id="slide-3"
+            src="../image/Iphone-Banner.png"
+            alt="3D rendering of an imaginary blue planet in space"
+          />
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+        </div>
       </div>
-    </div>
+    </section>
     <div class="Sales">
       <p>Our Product</p>
     </div>
