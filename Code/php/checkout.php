@@ -42,7 +42,6 @@ if(isset($_GET['delete_all'])){
 </head>
 <body>
 
-
 <div class="container">
 
 <section class="shopping-cart">
@@ -96,24 +95,13 @@ if(isset($_GET['delete_all'])){
             <td class="">$<?php echo $grand_total; ?></td>
             <td><a href="checkout.php?delete_all" onclick="return confirm('are you sure you want to delete all?');" class="delete-btn"> <i class="fas fa-trash"></i> delete all </a></td>
          </tr>
-         <tr class="paymentcuy">
-            <td>
-            <div class="cash"><a href="">Cash</a></div>
-            
-            <a>/</a>
-            <div class="card">
-            <a href="payment.php">Card</a>
-            </div>
-            
-            
-         </td></tr>
-
+         
       </tbody>
 
    </table>
          
    <div class="checkout-btn">
-      <button type="submit"  class="btn" onclick="openPopup()" <?= ($grand_total == 0)?'':'disabled'; ?>">Order</button>
+      <button type="submit"  class="btn" onclick="openPopup()" <?= ($grand_total == 0)?'':'disabled'; ?>">Order Now</button>
    </div>
 
        
