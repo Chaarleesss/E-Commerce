@@ -21,6 +21,13 @@ body {
 .left {
   width: 25%;
   font-weight: 700;
+  margin-top: 2%;
+}
+
+.left .back i {
+  margin-left: 20px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .left p {
@@ -77,14 +84,21 @@ body {
 
 .right {
   width: 25%;
+  margin-top: 2%;
 }
 
-.right p {
-  padding: 30px 20px;
+.right span {
+  padding: 0px 30px;
   font-weight: 700;
 }
 
+.right p {
+  padding: 25px 15px;
+  font-weight: 500;
+}
+
 .details {
+  margin-top: 20%;
   padding: 20px 20px;
 }
 
@@ -161,6 +175,7 @@ button {
   border: none;
   height: 50px;
   border-radius: 3px;
+  font-weight: 700;
   margin-top: 30px;
   font-size: 18px;
   color: #ffffff;
