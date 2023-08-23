@@ -101,7 +101,7 @@ if(isset($_GET['delete_all'])){
    </table>
          
    <div class="checkout-btn">
-      <button type="submit"  class="btn" onclick="openPopup()" <?= ($grand_total == 0)?'':'disabled'; ?>">Order Now</button>
+   <a href="payment.php"  <?= ($grand_total == 0)?'':'disabled'; ?>><button type="submit"  class="btn">Order Now</button></a>
    </div>
 
        
