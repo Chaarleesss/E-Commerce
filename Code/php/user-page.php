@@ -89,7 +89,7 @@ if(isset($_GET['search']))
         </div>
       </div>
     </nav>
-    <section class="container">
+    <section class="slider-container">
       <div class="slider-wrapper">
         <div class="slider">
           <img

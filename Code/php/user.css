@@ -163,6 +163,10 @@ nav .icon-cart a {
   transform: scale(1.05);
 } */
 
+.slider-container {
+  margin-top: 2%;
+}
+
 .slider-wrapper {
   position: relative;
   max-width: 55rem;
