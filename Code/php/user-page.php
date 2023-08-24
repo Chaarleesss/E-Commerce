@@ -126,7 +126,9 @@ if(isset($_GET['search']))
     <form action="" method="post" class="form">
       <div class="content">
         <div class="section">
-            <div class="main"><img src="uploaded_img/<?php echo $row['image']; ?>" alt="" /></div>
+            <div class="main">
+            <a href="description.php?id=<?php echo $row ['id']; ?>">
+            <img src="uploaded_img/<?php echo $row['image']; ?>" alt="" /></a></div>
             <p class="name"><?php
                               if(strlen($row['name']) > 15)
                               {
