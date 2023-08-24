@@ -22,7 +22,7 @@
 
      <div class="container">
       <div class="left">
-        <div class="back"><i class="uil uil-arrow-left"></i><a href="Sign-In.php">Go-Back</a></div>
+        <div class="back"><i class="uil uil-arrow-left"></i><a href="checkout.php">Go-Back</a></div>
       
         <p>Payment Methods</p>
         <hr style="border: 1px solid #ccc; margin: 0 15px" />
