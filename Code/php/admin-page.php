@@ -14,13 +14,14 @@ if(isset($_POST['add_product'])){
   $product_price = $_POST['product_price'];
   $product_asal = $_POST['product_asal'];
   $product_image = $_FILES['product_image']['name'];
+  $product_deskripsi = $_POST['product_deskripsi'];
   $product_image_tmp_name = $_FILES['product_image']['tmp_name'];
   $product_image_folder = 'uploaded_img/'.$product_image;
 
   if(empty($product_name) || empty($product_price) || empty($product_asal) || empty($product_image)){
     $message[] = 'please fill out all';
   }else{
-    $insert = "INSERT INTO products (name, price, asal, image) VALUES('$product_name', '$product_price', '$product_asal', '$product_image')";
+    $insert = "INSERT INTO products (name, price, asal, image, deskripsi) VALUES('$product_name', '$product_price', '$product_asal', '$product_image', '$product_deskripsi')";
     $upload = mysqli_query($conn,$insert);
     if($upload){
        move_uploaded_file($product_image_tmp_name, $product_image_folder);
@@ -66,6 +67,7 @@ if(isset($message)){
     <button ><i class="uil uil-arrow-left"></i><a href="Sign-In.php">Log-Out</a></button>
       <h3>Add New Product</h3>
       <input type="text" placeholder="Product Name" name="product_name" class="box">
+      <input type="text" placeholder="Product Desc" name="product_deskripsi" class="box">
       <input type="number" placeholder="Product Price" name="product_price" class="box">
       <input type="text" placeholder="Product From" name="product_asal" class="box">
       <input type="file" accept="image/png, image/jpeg, image/jpg" name="product_image" class="box">
@@ -82,6 +84,7 @@ if(isset($message)){
         <tr>
           <th>product image</th>
           <th>product name</th>
+          <th>Produck Desc</th>
           <th>product asal</th>
           <th>product Price</th>
           <th>Action</th>
@@ -92,6 +95,7 @@ if(isset($message)){
           
           <td><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
           <td><?php echo $row['name']; ?></td>
+          <td><?php echo $row['deskripsi']; ?></td>
           <td><?php echo $row['asal']; ?></td>
           <td><?php echo $row['price']; ?></td>
           <td>
