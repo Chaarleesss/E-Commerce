@@ -61,7 +61,9 @@
               <p>Email</p>
               <input type="email" placeholder="Charles@gmail.com" id="email" required />
             </div>
-            <button>Pay Now</button>
+            <!-- <div onclick="openPopup()"></div> -->
+            <button type="submit">Pay Now</button>
+           
           </form>
         </div>
       </div>
@@ -108,7 +110,7 @@
 
     <script>
       let popup = document.getElementById("popup");
-
+        
       function openPopup() {
         popup.classList.add("open-popup");
       }
