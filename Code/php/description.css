@@ -33,11 +33,9 @@ nav .container {
   justify-content: space-between;
 }
 
-.nav-logo a {
-  cursor: pointer;
+.nav-logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
 
 .Head {
@@ -96,6 +94,39 @@ nav .icon-cart a {
   nav .container .button {
     display: none;
   }
+}
+
+.message {
+  display: block;
+  background: var(--bg-color);
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* .button .btn-1 a {
+        border: 2px solid #00a3ff;
+        border-radius: 8px;
+        padding: 5px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #00a3ff;
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+      } */
+
+nav .btn-1 .nama-user {
+  font-weight: 700;
+}
+
+.button .btn-2 a {
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #505050;
+  text-decoration: none;
 }
 
 .container-utama {
